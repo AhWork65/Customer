@@ -35,6 +35,7 @@ public class CustomerService {
 //==============================================================================
 public Customer findCustomerByNationalcode(String nationalcode) throws CustomerInternalException {
     LOGGER.debug("Nationalcode INPUT PARAMET IS {} ",nationalcode);
+
     if (nationalcode == null|| nationalcode.isEmpty() ){
         LOGGER.debug("Bad Parametr...");
         throw new CustomerInternalException("Bad Parametr...");
