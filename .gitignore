@@ -6,3 +6,4 @@ mvnw
 mvnw.cmd
 Customer.iml
 .mvn/
+logs/Customer.log
