@@ -84,26 +84,28 @@ public Customer createCustomer (Customer customer) throws CustomerCreateExceptio
 //==============================================================================
     public List<Customer> getAllCustomerByFilter(Customer customer) throws CustomerInternalException {
 
+    LOGGER.debug("getAllCustomerByFilter : Filter id  {}",(customer == null) ? " null ":customer.toString());
     List<Customer> customerList = customerRepository.findAll();
     SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd");
-    LOGGER.debug("getAllCustomerByFilter : Filter id  {}",(customer == null) ? " null ":customer.toString());
-        return  customerList.stream().
-                filter(t -> { return customer.getId() == null  || t.getId().equals( customer.getId());}).
-                filter(t -> { return customer.getCode() == null  || t.getCode().equals( customer.getCode());}).
-                filter(t -> { return customer.getName() == null  || t.getName().equals( customer.getName());}).
-                filter(t -> { return customer.getFamily() == null  || t.getFamily().equals( customer.getFamily());}).
-                filter(t -> { return customer.getNationalcode() == null  || t.getNationalcode().equals( customer.getNationalcode());}).
-                filter(t -> { return customer.getBirthDate() == null  || dateformat.format(t.getBirthDate()).equals(dateformat.format(customer.getBirthDate()));}).
-                filter(t -> { return customer.getStatus() == null  || t.getStatus().equals( customer.getStatus());}).
-                filter(t -> { return customer.getType() == null  || t.getType().equals( customer.getType());}).
-                filter(t -> { return customer.getMobile() == null  || t.getMobile().equals( customer.getMobile());}).
-                filter(t -> { return customer.getCreationDate() == null  || dateformat.format(t.getCreationDate()).equals(dateformat.format(customer.getCreationDate()));}).
+
+    customerList = customerList.stream().
+                filter(t -> { return customer == null || customer.getId() == null  || t.getId().equals( customer.getId());}).
+                filter(t -> { return customer == null || customer.getCode() == null  || t.getCode().equals( customer.getCode());}).
+                filter(t -> { return customer == null || customer.getName() == null  || t.getName().equals( customer.getName());}).
+                filter(t -> { return customer == null || customer.getFamily() == null  || t.getFamily().equals( customer.getFamily());}).
+                filter(t -> { return customer == null || customer.getNationalcode() == null  || t.getNationalcode().equals( customer.getNationalcode());}).
+                filter(t -> { return customer == null || customer.getBirthDate() == null  || dateformat.format(t.getBirthDate()).equals(dateformat.format(customer.getBirthDate()));}).
+                filter(t -> { return customer == null || customer.getStatus() == null  || t.getStatus().equals( customer.getStatus());}).
+                filter(t -> { return customer == null || customer.getType() == null  || t.getType().equals( customer.getType());}).
+                filter(t -> { return customer == null || customer.getMobile() == null  || t.getMobile().equals( customer.getMobile());}).
+                filter(t -> { return customer == null || customer.getCreationDate() == null  || dateformat.format(t.getCreationDate()).equals(dateformat.format(customer.getCreationDate()));}).
                 collect(Collectors.toList());
+        return customerList;
 
     }
 //==============================================================================
 @Transactional(rollbackFor = {Exception.class})
-    public void changeCustomerStatus(Customer customer) throws CustomerInternalException {
+    public Customer changeCustomerStatus(Customer customer) throws CustomerInternalException {
 
         if (!validateCustomer(customer)){
             LOGGER.error("changeCustomerStatus : Wrong parameter posted  parameter : {}",(customer == null) ? " null ":customer.toString());
@@ -127,12 +129,13 @@ public Customer createCustomer (Customer customer) throws CustomerCreateExceptio
 
         if (customer.getStatus().equals(changeCustomer.getStatus())){
             LOGGER.debug("Customer Status not Change");
-            return;
+            return null;
         }
 
         changeCustomer.setStatus(customer.getStatus());
-        customerRepository.save(changeCustomer);
         LOGGER.debug("changeCustomerStatus : Customer Status Change Customer :" ,changeCustomer.toString());
+
+        return customerRepository.save(changeCustomer);
 
     }
 //==============================================================================
@@ -164,8 +167,9 @@ public List<Deposit> getCustomerDeposits (Long id) throws CustomerInternalExcept
 //===============================================================================
 public List<Deposit> getCustomerDeposits (Customer customer) throws CustomerInternalException {
     LOGGER.info("getCustomerDeposits:  Send Customer is : ", (customer == null) ? " null ":customer.toString() );
-    List<Deposit> depositList = webClientBuilder.build().
-            post()
+    List<Deposit> depositList = webClientBuilder
+            .build()
+            .post()
             .uri("http://127.0.0.1:8091/DepositService/getBalansByCustomer")
             .body(Mono.just(customer), Customer.class)
             .retrieve()
@@ -175,9 +179,14 @@ public List<Deposit> getCustomerDeposits (Customer customer) throws CustomerInte
     return depositList;
 }
 //===============================================================================
-    public void removeCustomer(Long id) throws CustomerInternalException {
+    public Customer removeCustomer(Long id) throws CustomerInternalException {
+        LOGGER.debug("removeCustomer : Filter id  {}",(id == null) ? " null ":id.toString());
 
-    Customer customer = getCustomerById(id);
+        if ((id == null)) {
+            LOGGER.error("removeCustomer : Input Paramet Is Null");
+            throw new CustomerInternalException("removeCustomer : Input Paramet Is Null");
+        }
+        Customer customer = getCustomerById(id);
 
     List<Deposit> depositList = null;
         try {
@@ -198,7 +207,7 @@ public List<Deposit> getCustomerDeposits (Customer customer) throws CustomerInte
 
 
         customerRepository.delete(customer);
-
+        return customer;
     }
 //===============================================================================
 public List<Customer> getCustomersByDeposit(Deposit deposit){
