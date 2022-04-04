@@ -26,29 +26,31 @@ public class CreateCustomerTest {
     @InjectMocks
     private CustomerService customerService;
 
-//==============================================================================
-@Test
-    void Create_Customer_By_Null_Paramet() {
-        assertThrows(CustomerCreateException.class, () -> customerService.createCustomer(null));
-    }
     //==============================================================================
- @Test
-   void Create_Customer_Happy_Scenario() throws CustomerInternalException, CustomerCreateException {
-    Customer customer = new Customer();
-    customer.setCode("10");
-    customer.setNationalcode("1234567890");
+    @Test
+    void Create_Customer_Happy_Scenario() throws CustomerInternalException, CustomerCreateException {
+        Customer customer = new Customer();
+        customer.setCode("10");
+        customer.setNationalcode("1234567890");
 
-     when(customerRepository.findCustomerByNationalcode(Matchers.any())).thenReturn(null);
+        when(customerRepository.findCustomerByNationalcode(Matchers.any())).thenReturn(null);
 
-     when(customerRepository.save(Matchers.any())).thenAnswer(t -> {
-        Customer retCustomer2= new Customer();
-         retCustomer2.setCode("10");
-         retCustomer2.setNationalcode("1234567890");
-        return retCustomer2;
+        when(customerRepository.save(Matchers.any())).thenAnswer(t -> {
+            Customer retCustomer2= new Customer();
+            retCustomer2.setCode("10");
+            retCustomer2.setNationalcode("1234567890");
+            return retCustomer2;
         });
 
         Customer retCustomer = customerService.createCustomer(customer);
         assertEquals(retCustomer.getNationalcode(), "1234567890");
+    }
+
+
+//==============================================================================
+@Test
+    void Create_Customer_By_Bad_Paramet() {
+        assertThrows(CustomerCreateException.class, () -> customerService.createCustomer(null));
     }
 
 
