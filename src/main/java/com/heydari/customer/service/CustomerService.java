@@ -30,6 +30,8 @@ public class CustomerService {
 
     @Autowired
     private CustomerRepository customerRepository;
+    @Autowired
+    private WebClient webClient;
 
     @Autowired
     private WebClient.Builder webClientBuilder;
@@ -153,10 +155,11 @@ public Customer createCustomer (Customer customer) throws CustomerCreateExceptio
 public List<Deposit> getCustomerDeposits (Long id) throws CustomerInternalException {
     Customer customer = getCustomerById(id);
     LOGGER.info("getCustomerDeposits : Send Customer is : ", (customer == null) ? " null ":customer.toString() );
-    List<Deposit> depositList = webClientBuilder.build().
-            post()
+
+    List<Deposit> depositList = webClient
+            .post()
             .uri("http://127.0.0.1:8091/DepositService/getBalansByCustomer")
-            .body(Mono.just(customer), Customer.class)
+            .bodyValue(customer)
             .retrieve()
             .bodyToMono(new ParameterizedTypeReference<List<Deposit>>() {})
             .block();
@@ -167,11 +170,12 @@ public List<Deposit> getCustomerDeposits (Long id) throws CustomerInternalExcept
 //===============================================================================
 public List<Deposit> getCustomerDeposits (Customer customer) throws CustomerInternalException {
     LOGGER.info("getCustomerDeposits:  Send Customer is : ", (customer == null) ? " null ":customer.toString() );
-    List<Deposit> depositList = webClientBuilder
-            .build()
+
+
+    List<Deposit> depositList = webClient
             .post()
             .uri("http://127.0.0.1:8091/DepositService/getBalansByCustomer")
-            .body(Mono.just(customer), Customer.class)
+            .bodyValue(customer)
             .retrieve()
             .bodyToMono(new ParameterizedTypeReference<List<Deposit>>() {})
             .block();
@@ -195,12 +199,7 @@ public List<Deposit> getCustomerDeposits (Customer customer) throws CustomerInte
             e.printStackTrace();
         }
 
-        if (!(depositList == null)) {
-            LOGGER.error("removeCustomer :this Customer Have Depoit Can Not remove .customer :", (customer == null) ? " null ":customer.toString());
-            throw new CustomerInternalException("Customer Have Deposit Can Not Remove This Customer ...");
-        }
-
-        if (!depositList.isEmpty()) {
+        if ( (!depositList.isEmpty()) ) {
             LOGGER.error("removeCustomer :this Customer Have Depoit Can Not remove .customer :", (customer == null) ? " null ":customer.toString());
             throw new CustomerInternalException("Customer Have Deposit Can Not Remove This Customer ...");
         }
