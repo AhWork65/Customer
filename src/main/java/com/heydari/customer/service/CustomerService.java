@@ -1,10 +1,10 @@
 package com.heydari.customer.service;
 
-import com.heydari.customer.controller.CustomerController;
 import com.heydari.customer.exception.CustomerBadRequestException;
 import com.heydari.customer.exception.CustomerCreateException;
 import com.heydari.customer.exception.CustomerInternalException;
 import com.heydari.customer.model.Customer;
+import com.heydari.customer.model.CustomerChangeStatus;
 import com.heydari.customer.model.Deposit;
 import com.heydari.customer.repository.CustomerRepository;
 import org.slf4j.Logger;
@@ -15,14 +15,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.function.client.WebClientException;
-import reactor.core.publisher.Mono;
-
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import static java.util.Objects.requireNonNull;
 
 @Service
 public class CustomerService {
@@ -30,6 +27,7 @@ public class CustomerService {
 
     @Autowired
     private CustomerRepository customerRepository;
+
     @Autowired
     private WebClient webClient;
 
@@ -107,14 +105,14 @@ public Customer createCustomer (Customer customer) throws CustomerCreateExceptio
     }
 //==============================================================================
 @Transactional(rollbackFor = {Exception.class})
-    public Customer changeCustomerStatus(Customer customer) throws CustomerInternalException {
+    public Customer changeCustomerStatus(CustomerChangeStatus customer) throws CustomerInternalException {
 
-        if (!validateCustomer(customer)){
+        if (customer == null){
             LOGGER.error("changeCustomerStatus : Wrong parameter posted  parameter : {}",(customer == null) ? " null ":customer.toString());
             throw new CustomerInternalException("Wrong parameter posted");
         }
 
-        if (customer.getId() == null) {
+        if (customer.getId() == null || customer.getStatus() == null) {
             LOGGER.error("changeCustomerStatus : Id Is Not Valid ID :{}",customer.getId());
             throw new CustomerInternalException("Id Is Not Valid...");
         }
@@ -156,13 +154,7 @@ public List<Deposit> getCustomerDeposits (Long id) throws CustomerInternalExcept
     Customer customer = getCustomerById(id);
     LOGGER.info("getCustomerDeposits : Send Customer is : ", (customer == null) ? " null ":customer.toString() );
 
-    List<Deposit> depositList = webClient
-            .post()
-            .uri("http://127.0.0.1:8091/DepositService/getBalansByCustomer")
-            .bodyValue(customer)
-            .retrieve()
-            .bodyToMono(new ParameterizedTypeReference<List<Deposit>>() {})
-            .block();
+    List<Deposit> depositList = getCustomerDeposits (customer);
 
     LOGGER.info("getCustomerDeposits : Get list count  is : ", depositList.size());
     return depositList;
@@ -171,10 +163,9 @@ public List<Deposit> getCustomerDeposits (Long id) throws CustomerInternalExcept
 public List<Deposit> getCustomerDeposits (Customer customer) throws CustomerInternalException {
     LOGGER.info("getCustomerDeposits:  Send Customer is : ", (customer == null) ? " null ":customer.toString() );
 
-
     List<Deposit> depositList = webClient
             .post()
-            .uri("http://127.0.0.1:8091/DepositService/getBalansByCustomer")
+            .uri("http://127.0.0.1:8091/depositservice/getdepositsbycustomer")
             .bodyValue(customer)
             .retrieve()
             .bodyToMono(new ParameterizedTypeReference<List<Deposit>>() {})

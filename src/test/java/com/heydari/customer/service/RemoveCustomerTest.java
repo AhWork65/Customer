@@ -34,13 +34,15 @@ public class RemoveCustomerTest {
 
     @InjectMocks
     private CustomerService customerService;
-    @Mock
-    private WebClient webClientMock;
 
     @Mock
     private CustomerRepository customerRepository;
 
-   @Mock
+    @Mock
+    private WebClient webClientMock;
+
+
+    @Mock
     private WebClient.RequestBodyUriSpec requestBodyUriSpecMock;
 
     @Mock
@@ -56,10 +58,6 @@ public class RemoveCustomerTest {
 
     @Mock
     private WebClient.ResponseSpec responseSpecMock;
-
-
-
-
 
 //==============================================================================
     @Test
@@ -91,6 +89,6 @@ void remove_Customer_Test_Happy_Scenario() throws CustomerInternalException {
 
 
     Customer retCustomer = customerService.removeCustomer(customer.getId());
-    assertEquals(retCustomer.getId(), 1L);
+    assertEquals(1L, retCustomer.getId());
     }
 }

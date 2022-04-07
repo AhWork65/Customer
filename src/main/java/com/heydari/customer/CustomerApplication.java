@@ -13,7 +13,10 @@ public class CustomerApplication {
     public WebClient.Builder getWebClientBuilder(){
         return  WebClient.builder();
     }
-
+    @Bean
+    public WebClient webClient() {
+        return WebClient.create();
+    }
 
     public static void main(String[] args) {
         SpringApplication.run(CustomerApplication.class, args);

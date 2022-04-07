@@ -34,7 +34,7 @@ class FindCustomerByNationalcodeTest {
             return customer;
         });
         Customer customer = customerService.findCustomerByNationalcode("1234567890");
-        assertEquals(customer.getNationalcode(), "1234567890");
+        assertEquals( "1234567890", customer.getNationalcode());
     }
 //==============================================================================
     @Test
@@ -46,11 +46,6 @@ class FindCustomerByNationalcodeTest {
     void find_Customer_By_Empty_Nationalcode() {
         assertThrows(CustomerInternalException.class, () -> customerService.findCustomerByNationalcode(""));
     }
-//==============================================================================
-    @Test
-    void findCustomer_By_Not_Valid_Customer() {
-        when(customerRepository.findCustomerByNationalcode(Matchers.any())).thenReturn(new Customer());
-        assertThrows(CustomerInternalException.class, () -> customerService.findCustomerByNationalcode("1234567890"));
-    }
+
 
 }

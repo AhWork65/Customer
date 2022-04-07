@@ -2,6 +2,7 @@ package com.heydari.customer.service;
 
 import com.heydari.customer.exception.CustomerInternalException;
 import com.heydari.customer.model.Customer;
+import com.heydari.customer.model.CustomerChangeStatus;
 import com.heydari.customer.model.CustomerSatus;
 import com.heydari.customer.model.CustomerType;
 import com.heydari.customer.repository.CustomerRepository;
@@ -31,14 +32,14 @@ public class ChangeCustomerStatusTest {
 
     @Test
     void change_Customer_Status_Test_Happy_Scenario() throws CustomerInternalException {
-        Customer customer = new Customer(1l,"1","test","test_family","1234567890",null ,null, CustomerSatus.Inactive, CustomerType.Legal,"0912",null);
+        CustomerChangeStatus customer = new CustomerChangeStatus(1l, CustomerSatus.Inactive);
         when(customerRepository.findById(Matchers.any())).thenAnswer(t -> {
             Optional<Customer> customerOptional =Optional.of(new Customer(1l,"1","test","test_family","1234567890",null ,null, CustomerSatus.Active, CustomerType.Legal,"0912",null));
             return  customerOptional;
         });
         when(customerRepository.save(Matchers.any())).thenAnswer(t -> { return (Customer)t.getArgument(0);});
         Customer retCustomer = customerService.changeCustomerStatus(customer);
-        assertEquals(retCustomer.getStatus(), CustomerSatus.Inactive);
+        assertEquals(CustomerSatus.Inactive, retCustomer.getStatus() );
     }
 //==============================================================================
 @Test
@@ -48,6 +49,6 @@ void change_Customer_Status_Test_ByNull_Paramet() throws CustomerInternalExcepti
 //==============================================================================
 @Test
 void change_Customer_Status_Test_ByNull_Customer_State() throws CustomerInternalException {
-    assertThrows(CustomerInternalException.class, () -> customerService.changeCustomerStatus(new Customer()));
+    assertThrows(CustomerInternalException.class, () -> customerService.changeCustomerStatus(new CustomerChangeStatus()));
 }
 }

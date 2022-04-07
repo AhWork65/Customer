@@ -4,6 +4,7 @@ package com.heydari.customer.controller;
 import com.heydari.customer.exception.CustomerBadRequestException;
 import com.heydari.customer.exception.CustomerNotFoundException;
 import com.heydari.customer.model.Customer;
+import com.heydari.customer.model.CustomerChangeStatus;
 import com.heydari.customer.model.Deposit;
 import com.heydari.customer.service.CustomerService;
 import org.slf4j.Logger;
@@ -50,7 +51,7 @@ public class CustomerController {
 }
 //===============================================================================
 @PutMapping("/changestatus")
-    public void changeCustomerStatus(@RequestBody Customer customer){
+    public void changeCustomerStatus(@RequestBody CustomerChangeStatus customer){
     LOGGER.info("changeCustomerStatus INPUT PARAMET IS  {} ",customer.toString());
     try {
         customerService.changeCustomerStatus(customer);
@@ -81,7 +82,7 @@ public Customer getCustomerById(@PathVariable("id") Long id){
         return customerService.getCustomerDeposits(id);
     } catch (Exception e) {
         LOGGER.error("getCustomerDeposits OUTPUT IS {} ",e.getMessage());
-        throw new CustomerBadRequestException("Customr Not have any Deposit...");
+        throw new CustomerBadRequestException(e.getMessage());
     }
 }
 //===============================================================================
@@ -92,7 +93,7 @@ public void removeCustomerById (@PathVariable("id")Long id) {
          customerService.removeCustomer(id);
     } catch (Exception e) {
         LOGGER.error("removeCustomerById OUTPUT IS {} ",e.getMessage());
-        throw new CustomerBadRequestException("Customr Not have any Deposit...");
+        throw new CustomerBadRequestException(e.getMessage());
     }
 }
 //===============================================================================

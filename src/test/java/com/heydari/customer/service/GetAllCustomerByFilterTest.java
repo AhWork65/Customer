@@ -41,7 +41,7 @@ public class GetAllCustomerByFilterTest {
             return customerList;
         });
         List<Customer> customerList = customerService.getAllCustomerByFilter(customer);
-        assertEquals(customerList.size(), 1);
+        assertEquals(1, customerList.size());
     }
     //=====================================================================================================================================================================
     @Test
@@ -55,6 +55,6 @@ public class GetAllCustomerByFilterTest {
             return customerList;
         });
         List<Customer> customerList = customerService.getAllCustomerByFilter(null);
-        assertEquals(customerList.size(), 4);
+        assertEquals(4, customerList.size());
     }
 }

@@ -43,7 +43,7 @@ public class CreateCustomerTest {
         });
 
         Customer retCustomer = customerService.createCustomer(customer);
-        assertEquals(retCustomer.getNationalcode(), "1234567890");
+        assertEquals("1234567890", retCustomer.getNationalcode());
     }
 
 

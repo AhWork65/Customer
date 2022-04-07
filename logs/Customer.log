@@ -1,19 +1,192 @@
-2022-03-30 23:39:50.239  INFO 15876 --- [main] c.heydari.customer.CustomerApplication   : Starting CustomerApplication using Java 1.8.0_151 on Amir with PID 15876 (D:\Tosan\FinalProject\Customer\target\classes started by Administrator in D:\Tosan\FinalProject\Customer)
-2022-03-30 23:39:50.270 DEBUG 15876 --- [main] c.heydari.customer.CustomerApplication   : Running with Spring Boot v2.6.4, Spring v5.3.16
-2022-03-30 23:39:50.273  INFO 15876 --- [main] c.heydari.customer.CustomerApplication   : No active profile set, falling back to 1 default profile: "default"
-2022-03-30 23:40:01.879  INFO 15876 --- [main] c.heydari.customer.CustomerApplication   : Started CustomerApplication in 13.184 seconds (JVM running for 16.397)
-2022-03-30 23:40:06.470  INFO 15876 --- [http-nio-8090-exec-1] c.h.c.controller.CustomerController      : CreateCustomer INPUT PARAMET IS Customer(id=null, code='4', name='Amir', family='heydari', nationalcode='1234567891', birthDate=Thu Mar 24 04:30:00 IRDT 2022, creationDate=Fri Mar 25 04:30:00 IRDT 2022, status=Inactive, type=Legal, mobile='09121234567', deposit=[]) 
-2022-03-30 23:40:07.339 ERROR 15876 --- [http-nio-8090-exec-1] c.h.c.controller.CustomerController      : CreateCustomer OUTPUT IS Exist This National Code  
-2022-03-30 23:40:14.152  INFO 15876 --- [http-nio-8090-exec-2] c.h.c.controller.CustomerController      : CreateCustomer INPUT PARAMET IS Customer(id=null, code='4', name='Amir', family='heydari', nationalcode='1234567892', birthDate=Thu Mar 24 04:30:00 IRDT 2022, creationDate=Fri Mar 25 04:30:00 IRDT 2022, status=Inactive, type=Legal, mobile='09121234567', deposit=[]) 
-2022-03-30 23:40:14.305 ERROR 15876 --- [http-nio-8090-exec-2] o.h.engine.jdbc.spi.SqlExceptionHelper   : Duplicate entry ''4'' for key 'Code'
-2022-03-30 23:40:14.327 ERROR 15876 --- [http-nio-8090-exec-2] c.h.c.controller.CustomerController      : CreateCustomer OUTPUT IS could not execute statement; SQL [n/a]; constraint [Code]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement 
-2022-03-30 23:42:48.652  INFO 15876 --- [http-nio-8090-exec-3] c.h.c.controller.CustomerController      : getAllCustomerByFilter INPUT PARAMET IS  Customer(id=null, code='4', name='Amir', family='heydari', nationalcode='1234567892', birthDate=Thu Mar 24 04:30:00 IRDT 2022, creationDate=Fri Mar 25 04:30:00 IRDT 2022, status=Inactive, type=Legal, mobile='09121234567', deposit=[]) 
-2022-03-30 23:43:09.432  INFO 15876 --- [http-nio-8090-exec-4] c.h.c.controller.CustomerController      : getAllCustomerByFilter INPUT PARAMET IS  Customer(id=null, code='4', name='Amir', family='heydari', nationalcode='1234567892', birthDate=Thu Mar 24 04:30:00 IRDT 2022, creationDate=Fri Mar 25 04:30:00 IRDT 2022, status=Inactive, type=Legal, mobile='09121234567', deposit=[]) 
-2022-03-30 23:44:32.237  INFO 15876 --- [http-nio-8090-exec-5] c.h.c.controller.CustomerController      : getAllCustomerByFilter INPUT PARAMET IS  Customer(id=null, code='4', name=null, family=null, nationalcode=null, birthDate=null, creationDate=null, status=null, type=null, mobile=null, deposit=null) 
-2022-03-30 23:45:04.072  INFO 15876 --- [http-nio-8090-exec-7] c.h.c.controller.CustomerController      : getAllCustomerByFilter INPUT PARAMET IS  Customer(id=null, code='1', name='Amir', family='heydari', nationalcode='1234567890', birthDate=null, creationDate=null, status=null, type=null, mobile=null, deposit=null) 
-2022-03-30 23:46:52.373  INFO 15876 --- [http-nio-8090-exec-9] c.h.c.controller.CustomerController      : getAllCustomerByFilter INPUT PARAMET IS  Customer(id=null, code='1', name='Amir', family='heydari', nationalcode='1234567890', birthDate=null, creationDate=null, status=null, type=null, mobile=null, deposit=null) 
-2022-03-30 23:47:14.935  INFO 15876 --- [http-nio-8090-exec-10] c.h.c.controller.CustomerController      : getAllCustomerByFilter INPUT PARAMET IS  Customer(id=null, code='1', name='Amir', family='heydari', nationalcode='1234567890', birthDate=Thu Mar 24 04:30:00 IRDT 2022, creationDate=null, status=null, type=null, mobile=null, deposit=null) 
-2022-03-30 23:47:41.673  INFO 15876 --- [http-nio-8090-exec-1] c.h.c.controller.CustomerController      : getAllCustomerByFilter INPUT PARAMET IS  Customer(id=null, code='1', name='Amir', family='heydari', nationalcode='1234567890', birthDate=Thu Mar 24 04:30:00 IRDT 2022, creationDate=Fri Mar 25 04:30:00 IRDT 2022, status=Inactive, type=null, mobile=null, deposit=null) 
-2022-03-30 23:48:03.490  INFO 15876 --- [http-nio-8090-exec-3] c.h.c.controller.CustomerController      : getAllCustomerByFilter INPUT PARAMET IS  Customer(id=null, code='1', name='Amir', family='heydari', nationalcode='1234567890', birthDate=Thu Mar 24 04:30:00 IRDT 2022, creationDate=Fri Mar 25 04:30:00 IRDT 2022, status=Inactive, type=Legal, mobile='09121234567', deposit=null) 
-2022-03-30 23:48:38.370  INFO 15876 --- [http-nio-8090-exec-4] c.h.c.controller.CustomerController      : getAllCustomerByFilter INPUT PARAMET IS  Customer(id=null, code='4', name=null, family=null, nationalcode=null, birthDate=null, creationDate=null, status=null, type=null, mobile=null, deposit=null) 
-2022-03-30 23:48:50.889  INFO 15876 --- [http-nio-8090-exec-5] c.h.c.controller.CustomerController      : getAllCustomerByFilter INPUT PARAMET IS  Customer(id=null, code='4', name='Amir', family='heydari', nationalcode='1234567891', birthDate=Thu Mar 24 04:30:00 IRDT 2022, creationDate=Fri Mar 25 04:30:00 IRDT 2022, status=Inactive, type=Legal, mobile='09121234567', deposit=null) 
+2022-04-08 00:02:17.925 ERROR 12112 --- [http-nio-8090-exec-1] c.h.c.controller.CustomerController      : getCustomerDeposits OUTPUT IS 404 Not Found from POST http://127.0.0.1:8091/DepositService/getBalansByCustomer 
+2022-04-08 00:03:06.108  INFO 12112 --- [http-nio-8090-exec-2] c.h.c.controller.CustomerController      : getCustomerDeposits INPUT PARAMET IS  1 
+2022-04-08 00:03:19.473  INFO 12112 --- [http-nio-8090-exec-2] c.h.customer.service.CustomerService     : getCustomerDeposits : Send Customer is : 
+2022-04-08 00:03:24.026  INFO 12112 --- [http-nio-8090-exec-2] c.h.customer.service.CustomerService     : getCustomerDeposits:  Send Customer is : 
+2022-04-08 00:05:17.039 ERROR 12112 --- [http-nio-8090-exec-2] c.h.c.controller.CustomerController      : getCustomerDeposits OUTPUT IS 404 Not Found from POST http://127.0.0.1:8091/DepositService/getBalansByCustomer 
+2022-04-08 00:08:13.287  INFO 6852 --- [main] c.heydari.customer.CustomerApplication   : Starting CustomerApplication using Java 1.8.0_151 on Amir with PID 6852 (D:\Tosan\FinalProject\Customer\target\classes started by Administrator in D:\Tosan\FinalProject\Customer)
+2022-04-08 00:08:13.299 DEBUG 6852 --- [main] c.heydari.customer.CustomerApplication   : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-04-08 00:08:13.301  INFO 6852 --- [main] c.heydari.customer.CustomerApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-04-08 00:08:30.383  INFO 6852 --- [main] c.heydari.customer.CustomerApplication   : Started CustomerApplication in 19.142 seconds (JVM running for 25.318)
+2022-04-08 00:08:39.590  INFO 6852 --- [http-nio-8090-exec-8] c.h.c.controller.CustomerController      : getCustomerDeposits INPUT PARAMET IS  1 
+2022-04-08 00:08:48.362  INFO 6852 --- [http-nio-8090-exec-8] c.h.customer.service.CustomerService     : getCustomerDeposits : Send Customer is : 
+2022-04-08 00:08:48.774  INFO 6852 --- [http-nio-8090-exec-8] c.h.customer.service.CustomerService     : getCustomerDeposits:  Send Customer is : 
+2022-04-08 00:09:20.468 ERROR 6852 --- [http-nio-8090-exec-8] c.h.c.controller.CustomerController      : getCustomerDeposits OUTPUT IS 404 Not Found from POST http://127.0.0.1:8091/DepositService/getdepositsbycustomer 
+2022-04-08 00:10:45.941  INFO 14720 --- [main] c.heydari.customer.CustomerApplication   : Starting CustomerApplication using Java 1.8.0_151 on Amir with PID 14720 (D:\Tosan\FinalProject\Customer\target\classes started by Administrator in D:\Tosan\FinalProject\Customer)
+2022-04-08 00:10:45.969 DEBUG 14720 --- [main] c.heydari.customer.CustomerApplication   : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-04-08 00:10:45.973  INFO 14720 --- [main] c.heydari.customer.CustomerApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-04-08 00:10:57.860  INFO 14720 --- [main] c.heydari.customer.CustomerApplication   : Started CustomerApplication in 14.9 seconds (JVM running for 20.095)
+2022-04-08 00:11:21.825  INFO 14720 --- [http-nio-8090-exec-1] c.h.c.controller.CustomerController      : getCustomerDeposits INPUT PARAMET IS  1 
+2022-04-08 00:11:27.726  INFO 14720 --- [http-nio-8090-exec-1] c.h.customer.service.CustomerService     : getCustomerDeposits : Send Customer is : 
+2022-04-08 00:11:28.309  INFO 14720 --- [http-nio-8090-exec-1] c.h.customer.service.CustomerService     : getCustomerDeposits:  Send Customer is : 
+2022-04-08 00:11:58.519  INFO 14720 --- [http-nio-8090-exec-1] c.h.customer.service.CustomerService     : getCustomerDeposits : Get list count  is : 
+2022-04-08 00:11:58.520  INFO 14720 --- [http-nio-8090-exec-1] c.h.customer.service.CustomerService     : getCustomerDeposits : Get list count  is : 
+2022-04-08 00:12:58.908  INFO 14720 --- [http-nio-8090-exec-2] c.h.c.controller.CustomerController      : getCustomerDeposits INPUT PARAMET IS  100 
+2022-04-08 00:13:05.642 ERROR 14720 --- [http-nio-8090-exec-2] c.h.customer.service.CustomerService     : getCustomerById :Customer Not Exist
+2022-04-08 00:13:05.649 ERROR 14720 --- [http-nio-8090-exec-2] c.h.c.controller.CustomerController      : getCustomerDeposits OUTPUT IS Customer Not Found 
+2022-04-08 00:14:13.755  INFO 14720 --- [http-nio-8090-exec-3] c.h.c.controller.CustomerController      : getCustomerDeposits INPUT PARAMET IS  1 
+2022-04-08 00:14:13.774  INFO 14720 --- [http-nio-8090-exec-3] c.h.customer.service.CustomerService     : getCustomerDeposits : Send Customer is : 
+2022-04-08 00:14:13.775  INFO 14720 --- [http-nio-8090-exec-3] c.h.customer.service.CustomerService     : getCustomerDeposits:  Send Customer is : 
+2022-04-08 00:14:22.827  INFO 14720 --- [http-nio-8090-exec-3] c.h.customer.service.CustomerService     : getCustomerDeposits : Get list count  is : 
+2022-04-08 00:14:22.828  INFO 14720 --- [http-nio-8090-exec-3] c.h.customer.service.CustomerService     : getCustomerDeposits : Get list count  is : 
+2022-04-08 00:15:51.794  INFO 14720 --- [http-nio-8090-exec-5] c.h.c.controller.CustomerController      : removeCustomerById INPUT PARAMET IS  1 
+2022-04-08 00:15:51.795 DEBUG 14720 --- [http-nio-8090-exec-5] c.h.customer.service.CustomerService     : removeCustomer : Filter id  1
+2022-04-08 00:15:51.822  INFO 14720 --- [http-nio-8090-exec-5] c.h.customer.service.CustomerService     : getCustomerDeposits:  Send Customer is : 
+2022-04-08 00:15:51.869  INFO 14720 --- [http-nio-8090-exec-5] c.h.customer.service.CustomerService     : getCustomerDeposits : Get list count  is : 
+2022-04-08 00:16:02.843 ERROR 14720 --- [http-nio-8090-exec-5] c.h.customer.service.CustomerService     : removeCustomer :this Customer Have Depoit Can Not remove .customer :
+2022-04-08 00:16:02.845 ERROR 14720 --- [http-nio-8090-exec-5] c.h.c.controller.CustomerController      : removeCustomerById OUTPUT IS Customer Have Deposit Can Not Remove This Customer ... 
+2022-04-08 00:17:41.194  INFO 14720 --- [http-nio-8090-exec-6] c.h.c.controller.CustomerController      : removeCustomerById INPUT PARAMET IS  1 
+2022-04-08 00:17:41.195 DEBUG 14720 --- [http-nio-8090-exec-6] c.h.customer.service.CustomerService     : removeCustomer : Filter id  1
+2022-04-08 00:17:41.216  INFO 14720 --- [http-nio-8090-exec-6] c.h.customer.service.CustomerService     : getCustomerDeposits:  Send Customer is : 
+2022-04-08 00:17:41.275  INFO 14720 --- [http-nio-8090-exec-6] c.h.customer.service.CustomerService     : getCustomerDeposits : Get list count  is : 
+2022-04-08 00:17:41.275 ERROR 14720 --- [http-nio-8090-exec-6] c.h.customer.service.CustomerService     : removeCustomer :this Customer Have Depoit Can Not remove .customer :
+2022-04-08 00:17:41.276 ERROR 14720 --- [http-nio-8090-exec-6] c.h.c.controller.CustomerController      : removeCustomerById OUTPUT IS Customer Have Deposit Can Not Remove This Customer ... 
+2022-04-08 00:18:01.140  INFO 14720 --- [http-nio-8090-exec-7] c.h.c.controller.CustomerController      : removeCustomerById INPUT PARAMET IS  6 
+2022-04-08 00:18:01.141 DEBUG 14720 --- [http-nio-8090-exec-7] c.h.customer.service.CustomerService     : removeCustomer : Filter id  6
+2022-04-08 00:18:01.154  INFO 14720 --- [http-nio-8090-exec-7] c.h.customer.service.CustomerService     : getCustomerDeposits:  Send Customer is : 
+2022-04-08 00:18:01.176  INFO 14720 --- [http-nio-8090-exec-7] c.h.customer.service.CustomerService     : getCustomerDeposits : Get list count  is : 
+2022-04-08 00:23:52.038  INFO 3060 --- [main] c.heydari.customer.CustomerApplication   : Starting CustomerApplication using Java 1.8.0_151 on Amir with PID 3060 (D:\Tosan\FinalProject\Customer\target\classes started by Administrator in D:\Tosan\FinalProject\Customer)
+2022-04-08 00:23:52.046 DEBUG 3060 --- [main] c.heydari.customer.CustomerApplication   : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-04-08 00:23:52.048  INFO 3060 --- [main] c.heydari.customer.CustomerApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-04-08 00:24:01.896  INFO 3060 --- [main] c.heydari.customer.CustomerApplication   : Started CustomerApplication in 11.464 seconds (JVM running for 14.557)
+2022-04-08 00:36:08.412  INFO 3060 --- [http-nio-8090-exec-3] c.h.c.controller.CustomerController      : changeCustomerStatus INPUT PARAMET IS  Customer(id=6, code='5', name='Amir', family='heydari', nationalcode='1234567866', birthDate=Thu Mar 24 04:30:00 IRDT 2022, creationDate=Fri Mar 25 04:30:00 IRDT 2022, status=Inactive, type=Legal, mobile='09121234567', deposit=[]) 
+2022-04-08 00:36:19.756 ERROR 3060 --- [http-nio-8090-exec-3] c.h.customer.service.CustomerService     : getCustomerById :Customer Not Exist
+2022-04-08 00:36:19.757 ERROR 3060 --- [http-nio-8090-exec-3] c.h.customer.service.CustomerService     : changeCustomerStatus : Customer Not Exist
+2022-04-08 00:36:19.766 ERROR 3060 --- [http-nio-8090-exec-3] c.h.c.controller.CustomerController      : changeCustomerStatus OUTPUT IS Customer Not Found 
+2022-04-08 00:36:49.459  INFO 14656 --- [main] c.heydari.customer.CustomerApplication   : Starting CustomerApplication using Java 1.8.0_151 on Amir with PID 14656 (D:\Tosan\FinalProject\Customer\target\classes started by Administrator in D:\Tosan\FinalProject\Customer)
+2022-04-08 00:36:49.483 DEBUG 14656 --- [main] c.heydari.customer.CustomerApplication   : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-04-08 00:36:49.496  INFO 14656 --- [main] c.heydari.customer.CustomerApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-04-08 00:36:57.401  INFO 14656 --- [main] c.heydari.customer.CustomerApplication   : Started CustomerApplication in 9.835 seconds (JVM running for 14.36)
+2022-04-08 00:54:11.496  INFO 13920 --- [main] c.heydari.customer.CustomerApplication   : Starting CustomerApplication using Java 1.8.0_151 on Amir with PID 13920 (D:\Tosan\FinalProject\Customer\target\classes started by Administrator in D:\Tosan\FinalProject\Customer)
+2022-04-08 00:54:11.515 DEBUG 13920 --- [main] c.heydari.customer.CustomerApplication   : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-04-08 00:54:11.517  INFO 13920 --- [main] c.heydari.customer.CustomerApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-04-08 00:54:21.247  INFO 13920 --- [main] c.heydari.customer.CustomerApplication   : Started CustomerApplication in 11.827 seconds (JVM running for 15.809)
+2022-04-08 00:55:57.469  INFO 4700 --- [main] c.heydari.customer.CustomerApplication   : Starting CustomerApplication using Java 1.8.0_151 on Amir with PID 4700 (D:\Tosan\FinalProject\Customer\target\classes started by Administrator in D:\Tosan\FinalProject\Customer)
+2022-04-08 00:55:57.478 DEBUG 4700 --- [main] c.heydari.customer.CustomerApplication   : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-04-08 00:55:57.480  INFO 4700 --- [main] c.heydari.customer.CustomerApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-04-08 00:56:09.310  INFO 4700 --- [main] c.heydari.customer.CustomerApplication   : Started CustomerApplication in 13.54 seconds (JVM running for 17.122)
+2022-04-08 00:56:36.119  INFO 4700 --- [http-nio-8090-exec-1] c.h.c.controller.CustomerController      : changeCustomerStatus INPUT PARAMET IS  CustomerChangeStatus(id=5, Status=Active) 
+2022-04-08 00:57:20.299  INFO 10028 --- [main] c.heydari.customer.CustomerApplication   : Starting CustomerApplication using Java 1.8.0_151 on Amir with PID 10028 (D:\Tosan\FinalProject\Customer\target\classes started by Administrator in D:\Tosan\FinalProject\Customer)
+2022-04-08 00:57:20.310 DEBUG 10028 --- [main] c.heydari.customer.CustomerApplication   : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-04-08 00:57:20.312  INFO 10028 --- [main] c.heydari.customer.CustomerApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-04-08 00:57:28.831  INFO 10028 --- [main] c.heydari.customer.CustomerApplication   : Started CustomerApplication in 10.412 seconds (JVM running for 14.245)
+2022-04-08 00:57:36.835  INFO 10028 --- [http-nio-8090-exec-2] c.h.c.controller.CustomerController      : changeCustomerStatus INPUT PARAMET IS  CustomerChangeStatus(id=5, Status=Active) 
+2022-04-08 00:57:52.228 DEBUG 10028 --- [http-nio-8090-exec-2] c.h.customer.service.CustomerService     : changeCustomerStatus : Customer Status Change Customer :
+2022-04-08 00:59:08.683  INFO 10028 --- [http-nio-8090-exec-4] c.h.c.controller.CustomerController      : getCustomerById INPUT PARAMET IS 1
+2022-04-08 00:59:08.698  INFO 10028 --- [http-nio-8090-exec-4] c.h.c.controller.CustomerController      : getCustomerById OUTPUT IS Customer(id=1, code='1', name='Amir', family='heydari', nationalcode='1234567890', birthDate=2022-03-24, creationDate=2022-03-25, status=Inactive, type=Legal, mobile='09121234567', deposit=[Deposit(id=1, number='123456', title='شماره حساب 1', status=OPEN, type=CHEKING_DEPOSIT, currency=RIAL, balance=3.00, openDate=2022-03-24, closeDate=null), Deposit(id=2, number='2', title='تست 2', status=OPEN, type=CHEKING_DEPOSIT, currency=RIAL, balance=12111281556.00, openDate=2022-03-28, closeDate=null)])
+2022-04-08 01:03:35.815  INFO 2496 --- [main] c.h.customer.CustomerApplicationTests    : Starting CustomerApplicationTests using Java 1.8.0_151 on Amir with PID 2496 (started by Administrator in D:\Tosan\FinalProject\Customer)
+2022-04-08 01:03:35.821 DEBUG 2496 --- [main] c.h.customer.CustomerApplicationTests    : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-04-08 01:03:35.824  INFO 2496 --- [main] c.h.customer.CustomerApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2022-04-08 01:03:53.955  INFO 2496 --- [main] c.h.customer.CustomerApplicationTests    : Started CustomerApplicationTests in 19.4 seconds (JVM running for 23.318)
+2022-04-08 01:03:54.871 ERROR 2496 --- [main] c.h.customer.service.CustomerService     : changeCustomerStatus : Id Is Not Valid ID :null
+2022-04-08 01:03:54.897 ERROR 2496 --- [main] c.h.customer.service.CustomerService     : changeCustomerStatus : Wrong parameter posted  parameter :  null 
+2022-04-08 01:03:54.965 DEBUG 2496 --- [main] c.h.customer.service.CustomerService     : changeCustomerStatus : Customer Status Change Customer :
+2022-04-08 01:03:54.988 DEBUG 2496 --- [main] c.h.customer.service.CustomerService     : findCustomerByNationalcode : Nationalcode INPUT PARAMET IS 1234567890 
+2022-04-08 01:03:54.989 DEBUG 2496 --- [main] c.h.customer.service.CustomerService     : findCustomerByNationalcode : return value
+2022-04-08 01:03:55.013 ERROR 2496 --- [main] c.h.customer.service.CustomerService     : createCustomer : Customer Parameter Not valid 
+2022-04-08 01:03:55.028 DEBUG 2496 --- [main] c.h.customer.service.CustomerService     : findCustomerByNationalcode : Nationalcode INPUT PARAMET IS  
+2022-04-08 01:03:55.028 DEBUG 2496 --- [main] c.h.customer.service.CustomerService     : Bad Parametr...
+2022-04-08 01:03:55.056 DEBUG 2496 --- [main] c.h.customer.service.CustomerService     : findCustomerByNationalcode : Nationalcode INPUT PARAMET IS 1234567890 
+2022-04-08 01:03:55.058 DEBUG 2496 --- [main] c.h.customer.service.CustomerService     : findCustomerByNationalcode : return value
+2022-04-08 01:03:55.064 DEBUG 2496 --- [main] c.h.customer.service.CustomerService     : findCustomerByNationalcode : Nationalcode INPUT PARAMET IS null 
+2022-04-08 01:03:55.067 DEBUG 2496 --- [main] c.h.customer.service.CustomerService     : Bad Parametr...
+2022-04-08 01:03:55.074 DEBUG 2496 --- [main] c.h.customer.service.CustomerService     : findCustomerByNationalcode : Nationalcode INPUT PARAMET IS 1234567890 
+2022-04-08 01:03:55.075 DEBUG 2496 --- [main] c.h.customer.service.CustomerService     : findCustomerByNationalcode : return value
+2022-04-08 01:03:55.121 DEBUG 2496 --- [main] c.h.customer.service.CustomerService     : getAllCustomerByFilter : Filter id   null 
+2022-04-08 01:03:55.145 DEBUG 2496 --- [main] c.h.customer.service.CustomerService     : getAllCustomerByFilter : Filter id  Customer(id=1, code=1, name=test, family=test_family, nationalcode=1234567890, birthDate=null, creationDate=null, status=Inactive, type=Legal, mobile=0912, deposit=null)
+2022-04-08 01:03:55.950 DEBUG 2496 --- [main] c.h.customer.service.CustomerService     : removeCustomer : Filter id   null 
+2022-04-08 01:03:55.952 ERROR 2496 --- [main] c.h.customer.service.CustomerService     : removeCustomer : Input Paramet Is Null
+2022-04-08 01:03:55.967 DEBUG 2496 --- [main] c.h.customer.service.CustomerService     : removeCustomer : Filter id  1
+2022-04-08 01:03:55.970  INFO 2496 --- [main] c.h.customer.service.CustomerService     : getCustomerDeposits:  Send Customer is : 
+2022-04-08 01:03:55.974  INFO 2496 --- [main] c.h.customer.service.CustomerService     : getCustomerDeposits : Get list count  is : 
+2022-04-08 01:14:05.343  INFO 16140 --- [main] c.h.customer.CustomerApplicationTests    : Starting CustomerApplicationTests using Java 1.8.0_151 on Amir with PID 16140 (started by Administrator in D:\Tosan\FinalProject\Customer)
+2022-04-08 01:14:05.347 DEBUG 16140 --- [main] c.h.customer.CustomerApplicationTests    : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-04-08 01:14:05.351  INFO 16140 --- [main] c.h.customer.CustomerApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2022-04-08 01:14:23.369  INFO 16140 --- [main] c.h.customer.CustomerApplicationTests    : Started CustomerApplicationTests in 19.264 seconds (JVM running for 23.279)
+2022-04-08 01:14:24.548 ERROR 16140 --- [main] c.h.customer.service.CustomerService     : changeCustomerStatus : Id Is Not Valid ID :null
+2022-04-08 01:14:24.567 ERROR 16140 --- [main] c.h.customer.service.CustomerService     : changeCustomerStatus : Wrong parameter posted  parameter :  null 
+2022-04-08 01:14:24.609 DEBUG 16140 --- [main] c.h.customer.service.CustomerService     : changeCustomerStatus : Customer Status Change Customer :
+2022-04-08 01:14:24.627 DEBUG 16140 --- [main] c.h.customer.service.CustomerService     : findCustomerByNationalcode : Nationalcode INPUT PARAMET IS 1234567890 
+2022-04-08 01:14:24.628 DEBUG 16140 --- [main] c.h.customer.service.CustomerService     : findCustomerByNationalcode : return value
+2022-04-08 01:14:24.635 ERROR 16140 --- [main] c.h.customer.service.CustomerService     : createCustomer : Customer Parameter Not valid 
+2022-04-08 01:14:24.651 DEBUG 16140 --- [main] c.h.customer.service.CustomerService     : findCustomerByNationalcode : Nationalcode INPUT PARAMET IS  
+2022-04-08 01:14:24.654 DEBUG 16140 --- [main] c.h.customer.service.CustomerService     : Bad Parametr...
+2022-04-08 01:14:24.667 DEBUG 16140 --- [main] c.h.customer.service.CustomerService     : findCustomerByNationalcode : Nationalcode INPUT PARAMET IS 1234567890 
+2022-04-08 01:14:24.668 DEBUG 16140 --- [main] c.h.customer.service.CustomerService     : findCustomerByNationalcode : return value
+2022-04-08 01:14:24.674 DEBUG 16140 --- [main] c.h.customer.service.CustomerService     : findCustomerByNationalcode : Nationalcode INPUT PARAMET IS null 
+2022-04-08 01:14:24.675 DEBUG 16140 --- [main] c.h.customer.service.CustomerService     : Bad Parametr...
+2022-04-08 01:14:24.686 DEBUG 16140 --- [main] c.h.customer.service.CustomerService     : getAllCustomerByFilter : Filter id   null 
+2022-04-08 01:14:24.705 DEBUG 16140 --- [main] c.h.customer.service.CustomerService     : getAllCustomerByFilter : Filter id  Customer(id=1, code=1, name=test, family=test_family, nationalcode=1234567890, birthDate=null, creationDate=null, status=Inactive, type=Legal, mobile=0912, deposit=null)
+2022-04-08 01:14:25.358 DEBUG 16140 --- [main] c.h.customer.service.CustomerService     : removeCustomer : Filter id   null 
+2022-04-08 01:14:25.362 ERROR 16140 --- [main] c.h.customer.service.CustomerService     : removeCustomer : Input Paramet Is Null
+2022-04-08 01:14:25.388 DEBUG 16140 --- [main] c.h.customer.service.CustomerService     : removeCustomer : Filter id  1
+2022-04-08 01:14:25.391  INFO 16140 --- [main] c.h.customer.service.CustomerService     : getCustomerDeposits:  Send Customer is : 
+2022-04-08 01:14:25.395  INFO 16140 --- [main] c.h.customer.service.CustomerService     : getCustomerDeposits : Get list count  is : 
+2022-04-08 01:18:27.964  INFO 10376 --- [main] c.h.customer.CustomerApplicationTests    : Starting CustomerApplicationTests using Java 1.8.0_151 on Amir with PID 10376 (started by Administrator in D:\Tosan\FinalProject\Customer)
+2022-04-08 01:18:27.969 DEBUG 10376 --- [main] c.h.customer.CustomerApplicationTests    : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-04-08 01:18:27.971  INFO 10376 --- [main] c.h.customer.CustomerApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2022-04-08 01:18:50.854  INFO 10376 --- [main] c.h.customer.CustomerApplicationTests    : Started CustomerApplicationTests in 24.264 seconds (JVM running for 28.363)
+2022-04-08 01:18:52.313 ERROR 10376 --- [main] c.h.customer.service.CustomerService     : changeCustomerStatus : Id Is Not Valid ID :null
+2022-04-08 01:18:52.369 ERROR 10376 --- [main] c.h.customer.service.CustomerService     : changeCustomerStatus : Wrong parameter posted  parameter :  null 
+2022-04-08 01:18:52.470 DEBUG 10376 --- [main] c.h.customer.service.CustomerService     : changeCustomerStatus : Customer Status Change Customer :
+2022-04-08 01:18:52.511 DEBUG 10376 --- [main] c.h.customer.service.CustomerService     : findCustomerByNationalcode : Nationalcode INPUT PARAMET IS 1234567890 
+2022-04-08 01:18:52.512 DEBUG 10376 --- [main] c.h.customer.service.CustomerService     : findCustomerByNationalcode : return value
+2022-04-08 01:18:52.519 ERROR 10376 --- [main] c.h.customer.service.CustomerService     : createCustomer : Customer Parameter Not valid 
+2022-04-08 01:18:52.536 DEBUG 10376 --- [main] c.h.customer.service.CustomerService     : findCustomerByNationalcode : Nationalcode INPUT PARAMET IS  
+2022-04-08 01:18:52.537 DEBUG 10376 --- [main] c.h.customer.service.CustomerService     : Bad Parametr...
+2022-04-08 01:18:52.544 DEBUG 10376 --- [main] c.h.customer.service.CustomerService     : findCustomerByNationalcode : Nationalcode INPUT PARAMET IS 1234567890 
+2022-04-08 01:18:52.545 DEBUG 10376 --- [main] c.h.customer.service.CustomerService     : findCustomerByNationalcode : return value
+2022-04-08 01:18:52.580 DEBUG 10376 --- [main] c.h.customer.service.CustomerService     : findCustomerByNationalcode : Nationalcode INPUT PARAMET IS null 
+2022-04-08 01:18:52.581 DEBUG 10376 --- [main] c.h.customer.service.CustomerService     : Bad Parametr...
+2022-04-08 01:18:52.611 DEBUG 10376 --- [main] c.h.customer.service.CustomerService     : getAllCustomerByFilter : Filter id   null 
+2022-04-08 01:18:52.629 DEBUG 10376 --- [main] c.h.customer.service.CustomerService     : getAllCustomerByFilter : Filter id  Customer(id=1, code=1, name=test, family=test_family, nationalcode=1234567890, birthDate=null, creationDate=null, status=Inactive, type=Legal, mobile=0912, deposit=null)
+2022-04-08 01:18:53.439 DEBUG 10376 --- [main] c.h.customer.service.CustomerService     : removeCustomer : Filter id   null 
+2022-04-08 01:18:53.444 ERROR 10376 --- [main] c.h.customer.service.CustomerService     : removeCustomer : Input Paramet Is Null
+2022-04-08 01:18:53.467 DEBUG 10376 --- [main] c.h.customer.service.CustomerService     : removeCustomer : Filter id  1
+2022-04-08 01:18:53.471  INFO 10376 --- [main] c.h.customer.service.CustomerService     : getCustomerDeposits:  Send Customer is : 
+2022-04-08 01:18:53.485  INFO 10376 --- [main] c.h.customer.service.CustomerService     : getCustomerDeposits : Get list count  is : 
+2022-04-08 01:43:03.310  INFO 16660 --- [main] c.h.customer.CustomerApplicationTests    : Starting CustomerApplicationTests using Java 1.8.0_151 on Amir with PID 16660 (started by Administrator in D:\Tosan\FinalProject\Customer)
+2022-04-08 01:43:03.384 DEBUG 16660 --- [main] c.h.customer.CustomerApplicationTests    : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-04-08 01:43:03.386  INFO 16660 --- [main] c.h.customer.CustomerApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2022-04-08 01:43:27.999  INFO 16660 --- [main] c.h.customer.CustomerApplicationTests    : Started CustomerApplicationTests in 26.199 seconds (JVM running for 29.58)
+2022-04-08 01:43:29.925 ERROR 16660 --- [main] c.h.customer.service.CustomerService     : changeCustomerStatus : Id Is Not Valid ID :null
+2022-04-08 01:43:29.953 ERROR 16660 --- [main] c.h.customer.service.CustomerService     : changeCustomerStatus : Wrong parameter posted  parameter :  null 
+2022-04-08 01:43:30.029 DEBUG 16660 --- [main] c.h.customer.service.CustomerService     : changeCustomerStatus : Customer Status Change Customer :
+2022-04-08 01:43:30.064 DEBUG 16660 --- [main] c.h.customer.service.CustomerService     : findCustomerByNationalcode : Nationalcode INPUT PARAMET IS 1234567890 
+2022-04-08 01:43:30.065 DEBUG 16660 --- [main] c.h.customer.service.CustomerService     : findCustomerByNationalcode : return value
+2022-04-08 01:43:30.078 ERROR 16660 --- [main] c.h.customer.service.CustomerService     : createCustomer : Customer Parameter Not valid 
+2022-04-08 01:43:30.119 DEBUG 16660 --- [main] c.h.customer.service.CustomerService     : findCustomerByNationalcode : Nationalcode INPUT PARAMET IS  
+2022-04-08 01:43:30.120 DEBUG 16660 --- [main] c.h.customer.service.CustomerService     : Bad Parametr...
+2022-04-08 01:43:30.129 DEBUG 16660 --- [main] c.h.customer.service.CustomerService     : findCustomerByNationalcode : Nationalcode INPUT PARAMET IS 1234567890 
+2022-04-08 01:43:30.162 DEBUG 16660 --- [main] c.h.customer.service.CustomerService     : findCustomerByNationalcode : return value
+2022-04-08 01:43:30.170 DEBUG 16660 --- [main] c.h.customer.service.CustomerService     : findCustomerByNationalcode : Nationalcode INPUT PARAMET IS null 
+2022-04-08 01:43:30.171 DEBUG 16660 --- [main] c.h.customer.service.CustomerService     : Bad Parametr...
+2022-04-08 01:43:30.184 DEBUG 16660 --- [main] c.h.customer.service.CustomerService     : getAllCustomerByFilter : Filter id   null 
+2022-04-08 01:43:30.205 DEBUG 16660 --- [main] c.h.customer.service.CustomerService     : getAllCustomerByFilter : Filter id  Customer(id=1, code=1, name=test, family=test_family, nationalcode=1234567890, birthDate=null, creationDate=null, status=Inactive, type=Legal, mobile=0912, deposit=null)
+2022-04-08 01:43:31.257 DEBUG 16660 --- [main] c.h.customer.service.CustomerService     : removeCustomer : Filter id   null 
+2022-04-08 01:43:31.260 ERROR 16660 --- [main] c.h.customer.service.CustomerService     : removeCustomer : Input Paramet Is Null
+2022-04-08 01:43:31.273 DEBUG 16660 --- [main] c.h.customer.service.CustomerService     : removeCustomer : Filter id  1
+2022-04-08 01:43:31.274  INFO 16660 --- [main] c.h.customer.service.CustomerService     : getCustomerDeposits:  Send Customer is : 
+2022-04-08 01:43:31.277  INFO 16660 --- [main] c.h.customer.service.CustomerService     : getCustomerDeposits : Get list count  is : 
+2022-04-08 02:06:51.960  INFO 11608 --- [main] c.h.customer.CustomerApplicationTests    : Starting CustomerApplicationTests using Java 1.8.0_151 on Amir with PID 11608 (started by Administrator in D:\Tosan\FinalProject\Customer)
+2022-04-08 02:06:51.963 DEBUG 11608 --- [main] c.h.customer.CustomerApplicationTests    : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-04-08 02:06:51.965  INFO 11608 --- [main] c.h.customer.CustomerApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2022-04-08 02:07:08.786  INFO 11608 --- [main] c.h.customer.CustomerApplicationTests    : Started CustomerApplicationTests in 18.005 seconds (JVM running for 21.331)
+2022-04-08 02:07:09.760 ERROR 11608 --- [main] c.h.customer.service.CustomerService     : changeCustomerStatus : Id Is Not Valid ID :null
+2022-04-08 02:07:09.784 ERROR 11608 --- [main] c.h.customer.service.CustomerService     : changeCustomerStatus : Wrong parameter posted  parameter :  null 
+2022-04-08 02:07:09.843 DEBUG 11608 --- [main] c.h.customer.service.CustomerService     : changeCustomerStatus : Customer Status Change Customer :
+2022-04-08 02:07:09.884 DEBUG 11608 --- [main] c.h.customer.service.CustomerService     : findCustomerByNationalcode : Nationalcode INPUT PARAMET IS 1234567890 
+2022-04-08 02:07:09.888 DEBUG 11608 --- [main] c.h.customer.service.CustomerService     : findCustomerByNationalcode : return value
+2022-04-08 02:07:09.902 ERROR 11608 --- [main] c.h.customer.service.CustomerService     : createCustomer : Customer Parameter Not valid 
+2022-04-08 02:07:09.918 DEBUG 11608 --- [main] c.h.customer.service.CustomerService     : findCustomerByNationalcode : Nationalcode INPUT PARAMET IS  
+2022-04-08 02:07:09.918 DEBUG 11608 --- [main] c.h.customer.service.CustomerService     : Bad Parametr...
+2022-04-08 02:07:09.925 DEBUG 11608 --- [main] c.h.customer.service.CustomerService     : findCustomerByNationalcode : Nationalcode INPUT PARAMET IS 1234567890 
+2022-04-08 02:07:09.926 DEBUG 11608 --- [main] c.h.customer.service.CustomerService     : findCustomerByNationalcode : return value
+2022-04-08 02:07:09.932 DEBUG 11608 --- [main] c.h.customer.service.CustomerService     : findCustomerByNationalcode : Nationalcode INPUT PARAMET IS null 
+2022-04-08 02:07:09.933 DEBUG 11608 --- [main] c.h.customer.service.CustomerService     : Bad Parametr...
+2022-04-08 02:07:09.945 DEBUG 11608 --- [main] c.h.customer.service.CustomerService     : getAllCustomerByFilter : Filter id   null 
+2022-04-08 02:07:09.961 DEBUG 11608 --- [main] c.h.customer.service.CustomerService     : getAllCustomerByFilter : Filter id  Customer(id=1, code=1, name=test, family=test_family, nationalcode=1234567890, birthDate=null, creationDate=null, status=Inactive, type=Legal, mobile=0912, deposit=null)
+2022-04-08 02:07:10.876 DEBUG 11608 --- [main] c.h.customer.service.CustomerService     : removeCustomer : Filter id   null 
+2022-04-08 02:07:10.882 ERROR 11608 --- [main] c.h.customer.service.CustomerService     : removeCustomer : Input Paramet Is Null
+2022-04-08 02:07:10.907 DEBUG 11608 --- [main] c.h.customer.service.CustomerService     : removeCustomer : Filter id  1
+2022-04-08 02:07:10.910  INFO 11608 --- [main] c.h.customer.service.CustomerService     : getCustomerDeposits:  Send Customer is : 
+2022-04-08 02:07:10.927  INFO 11608 --- [main] c.h.customer.service.CustomerService     : getCustomerDeposits : Get list count  is : 
