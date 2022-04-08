@@ -10,6 +10,7 @@ import com.heydari.customer.repository.CustomerRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,6 +34,9 @@ public class CustomerService {
 
     @Autowired
     private WebClient.Builder webClientBuilder;
+
+    @Value("${depositUrl}")
+    private String depositServiceUrl;
 
 //==============================================================================
 public Customer findCustomerByNationalcode(String nationalcode) throws CustomerInternalException {
@@ -165,7 +169,7 @@ public List<Deposit> getCustomerDeposits (Customer customer) throws CustomerInte
 
     List<Deposit> depositList = webClient
             .post()
-            .uri("http://127.0.0.1:8091/depositservice/getdepositsbycustomer")
+            .uri(depositServiceUrl+"/depositservice/getdepositsbycustomer")
             .bodyValue(customer)
             .retrieve()
             .bodyToMono(new ParameterizedTypeReference<List<Deposit>>() {})

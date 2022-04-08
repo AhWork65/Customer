@@ -190,3 +190,78 @@
 2022-04-08 02:07:10.907 DEBUG 11608 --- [main] c.h.customer.service.CustomerService     : removeCustomer : Filter id  1
 2022-04-08 02:07:10.910  INFO 11608 --- [main] c.h.customer.service.CustomerService     : getCustomerDeposits:  Send Customer is : 
 2022-04-08 02:07:10.927  INFO 11608 --- [main] c.h.customer.service.CustomerService     : getCustomerDeposits : Get list count  is : 
+2022-04-08 10:54:44.140  INFO 17508 --- [main] c.heydari.customer.CustomerApplication   : Starting CustomerApplication using Java 1.8.0_151 on Amir with PID 17508 (D:\Tosan\FinalProject\Customer\target\classes started by Administrator in D:\Tosan\FinalProject\Customer)
+2022-04-08 10:54:44.198 DEBUG 17508 --- [main] c.heydari.customer.CustomerApplication   : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-04-08 10:54:44.200  INFO 17508 --- [main] c.heydari.customer.CustomerApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-04-08 10:54:55.961  INFO 17508 --- [main] c.heydari.customer.CustomerApplication   : Started CustomerApplication in 13.139 seconds (JVM running for 16.115)
+2022-04-08 10:54:59.442  INFO 17508 --- [http-nio-8090-exec-2] c.h.c.controller.CustomerController      : getAllCustomerByFilter INPUT PARAMET IS  Customer(id=null, code=null, name=null, family=null, nationalcode=null, birthDate=null, creationDate=null, status=null, type=null, mobile=null, deposit=null) 
+2022-04-08 10:54:59.478 DEBUG 17508 --- [http-nio-8090-exec-2] c.h.customer.service.CustomerService     : getAllCustomerByFilter : Filter id  Customer(id=null, code=null, name=null, family=null, nationalcode=null, birthDate=null, creationDate=null, status=null, type=null, mobile=null, deposit=null)
+2022-04-08 11:21:59.024  INFO 17508 --- [http-nio-8090-exec-1] c.h.c.controller.CustomerController      : getCustomerDeposits INPUT PARAMET IS  1 
+2022-04-08 11:21:59.060  INFO 17508 --- [http-nio-8090-exec-1] c.h.customer.service.CustomerService     : getCustomerDeposits : Send Customer is : 
+2022-04-08 11:21:59.061  INFO 17508 --- [http-nio-8090-exec-1] c.h.customer.service.CustomerService     : getCustomerDeposits:  Send Customer is : 
+2022-04-08 11:22:04.026 ERROR 17508 --- [http-nio-8090-exec-1] c.h.c.controller.CustomerController      : getCustomerDeposits OUTPUT IS 200 OK from POST http://127.0.0.1:8091/depositservice/getdepositsbycustomer; nested exception is reactor.netty.http.client.PrematureCloseException: Connection prematurely closed DURING response 
+2022-04-08 11:24:14.428  INFO 17508 --- [http-nio-8090-exec-4] c.h.c.controller.CustomerController      : getCustomerDeposits INPUT PARAMET IS  1 
+2022-04-08 11:24:14.453  INFO 17508 --- [http-nio-8090-exec-4] c.h.customer.service.CustomerService     : getCustomerDeposits : Send Customer is : 
+2022-04-08 11:24:14.454  INFO 17508 --- [http-nio-8090-exec-4] c.h.customer.service.CustomerService     : getCustomerDeposits:  Send Customer is : 
+2022-04-08 11:24:15.063 ERROR 17508 --- [http-nio-8090-exec-4] c.h.c.controller.CustomerController      : getCustomerDeposits OUTPUT IS 200 OK from POST http://127.0.0.1:8091/depositservice/getdepositsbycustomer; nested exception is reactor.netty.http.client.PrematureCloseException: Connection prematurely closed DURING response 
+2022-04-08 11:29:54.636  INFO 17508 --- [http-nio-8090-exec-5] c.h.c.controller.CustomerController      : getCustomerDeposits INPUT PARAMET IS  1 
+2022-04-08 11:29:54.658  INFO 17508 --- [http-nio-8090-exec-5] c.h.customer.service.CustomerService     : getCustomerDeposits : Send Customer is : 
+2022-04-08 11:29:54.659  INFO 17508 --- [http-nio-8090-exec-5] c.h.customer.service.CustomerService     : getCustomerDeposits:  Send Customer is : 
+2022-04-08 11:29:58.398  INFO 17508 --- [http-nio-8090-exec-5] c.h.customer.service.CustomerService     : getCustomerDeposits : Get list count  is : 
+2022-04-08 11:29:58.399  INFO 17508 --- [http-nio-8090-exec-5] c.h.customer.service.CustomerService     : getCustomerDeposits : Get list count  is : 
+2022-04-08 11:34:45.091  INFO 17508 --- [http-nio-8090-exec-7] c.h.c.controller.CustomerController      : getCustomerDeposits INPUT PARAMET IS  1 
+2022-04-08 11:34:45.135  INFO 17508 --- [http-nio-8090-exec-7] c.h.customer.service.CustomerService     : getCustomerDeposits : Send Customer is : 
+2022-04-08 11:34:45.135  INFO 17508 --- [http-nio-8090-exec-7] c.h.customer.service.CustomerService     : getCustomerDeposits:  Send Customer is : 
+2022-04-08 11:34:45.220  INFO 17508 --- [http-nio-8090-exec-7] c.h.customer.service.CustomerService     : getCustomerDeposits : Get list count  is : 
+2022-04-08 11:34:45.220  INFO 17508 --- [http-nio-8090-exec-7] c.h.customer.service.CustomerService     : getCustomerDeposits : Get list count  is : 
+2022-04-08 12:08:13.188  INFO 17508 --- [http-nio-8090-exec-9] c.h.c.controller.CustomerController      : getAllCustomerByFilter INPUT PARAMET IS  Customer(id=null, code=null, name=null, family=null, nationalcode=null, birthDate=null, creationDate=null, status=null, type=null, mobile=null, deposit=null) 
+2022-04-08 12:08:13.195 DEBUG 17508 --- [http-nio-8090-exec-9] c.h.customer.service.CustomerService     : getAllCustomerByFilter : Filter id  Customer(id=null, code=null, name=null, family=null, nationalcode=null, birthDate=null, creationDate=null, status=null, type=null, mobile=null, deposit=null)
+2022-04-08 12:10:48.142  INFO 17508 --- [http-nio-8090-exec-2] c.h.c.controller.CustomerController      : getCustomersByDeposit INPUT PARAMET IS  Deposit(id=28, number='39', title='تست 3', status=OPEN, type=CHEKING_DEPOSIT, currency=RIAL, balance=3000000.00, openDate=Thu Mar 24 04:30:00 IRDT 2022, closeDate=null) 
+2022-04-08 12:10:48.355  INFO 17508 --- [http-nio-8090-exec-2] c.h.customer.service.CustomerService     : getCustomersByDeposit :  get 3  customer 
+2022-04-08 12:13:29.379  INFO 17508 --- [http-nio-8090-exec-1] c.h.c.controller.CustomerController      : getCustomersByDeposit INPUT PARAMET IS  Deposit(id=28, number='39', title='تست 3', status=OPEN, type=CHEKING_DEPOSIT, currency=RIAL, balance=3000000.00, openDate=Thu Mar 24 04:30:00 IRDT 2022, closeDate=null) 
+2022-04-08 12:13:29.385  INFO 17508 --- [http-nio-8090-exec-1] c.h.customer.service.CustomerService     : getCustomersByDeposit :  get 3  customer 
+2022-04-08 12:17:56.846  INFO 12788 --- [main] c.heydari.customer.CustomerApplication   : Starting CustomerApplication using Java 1.8.0_151 on Amir with PID 12788 (D:\Tosan\FinalProject\Customer\target\classes started by Administrator in D:\Tosan\FinalProject\Customer)
+2022-04-08 12:17:56.884 DEBUG 12788 --- [main] c.heydari.customer.CustomerApplication   : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-04-08 12:17:56.887  INFO 12788 --- [main] c.heydari.customer.CustomerApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-04-08 12:18:25.595  INFO 7832 --- [main] c.heydari.customer.CustomerApplication   : Starting CustomerApplication using Java 1.8.0_151 on Amir with PID 7832 (D:\Tosan\FinalProject\Customer\target\classes started by Administrator in D:\Tosan\FinalProject\Customer)
+2022-04-08 12:18:25.632 DEBUG 7832 --- [main] c.heydari.customer.CustomerApplication   : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-04-08 12:18:25.635  INFO 7832 --- [main] c.heydari.customer.CustomerApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-04-08 12:18:52.051  INFO 12788 --- [main] c.heydari.customer.CustomerApplication   : Started CustomerApplication in 59.663 seconds (JVM running for 67.092)
+2022-04-08 12:19:00.026 ERROR 7832 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8090 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8090 or configure this application to listen on another port.
+
+2022-04-08 12:20:11.038  INFO 14576 --- [main] c.heydari.customer.CustomerApplication   : Starting CustomerApplication using Java 1.8.0_151 on Amir with PID 14576 (D:\Tosan\FinalProject\Customer\target\classes started by Administrator in D:\Tosan\FinalProject\Customer)
+2022-04-08 12:20:11.048 DEBUG 14576 --- [main] c.heydari.customer.CustomerApplication   : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-04-08 12:20:11.050  INFO 14576 --- [main] c.heydari.customer.CustomerApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-04-08 12:20:25.774  INFO 14576 --- [main] c.heydari.customer.CustomerApplication   : Started CustomerApplication in 17.363 seconds (JVM running for 21.678)
+2022-04-08 12:20:29.761  INFO 14576 --- [http-nio-8090-exec-1] c.h.c.controller.CustomerController      : getCustomerDeposits INPUT PARAMET IS  1 
+2022-04-08 12:20:30.612  INFO 14576 --- [http-nio-8090-exec-1] c.h.customer.service.CustomerService     : getCustomerDeposits : Send Customer is : 
+2022-04-08 12:20:30.613  INFO 14576 --- [http-nio-8090-exec-1] c.h.customer.service.CustomerService     : getCustomerDeposits:  Send Customer is : 
+2022-04-08 12:20:37.060 ERROR 14576 --- [http-nio-8090-exec-1] c.h.c.controller.CustomerController      : getCustomerDeposits OUTPUT IS 404 Not Found from POST http://127.0.0.1:8090/depositservice/getdepositsbycustomer 
+2022-04-08 12:21:42.850  INFO 14576 --- [http-nio-8090-exec-4] c.h.c.controller.CustomerController      : getCustomerDeposits INPUT PARAMET IS  1 
+2022-04-08 12:21:56.090  INFO 14576 --- [http-nio-8090-exec-4] c.h.customer.service.CustomerService     : getCustomerDeposits : Send Customer is : 
+2022-04-08 12:21:56.093  INFO 14576 --- [http-nio-8090-exec-4] c.h.customer.service.CustomerService     : getCustomerDeposits:  Send Customer is : 
+2022-04-08 12:22:05.103 ERROR 14576 --- [http-nio-8090-exec-4] c.h.c.controller.CustomerController      : getCustomerDeposits OUTPUT IS 404 Not Found from POST http://127.0.0.1:8090/depositservice/getdepositsbycustomer 
+2022-04-08 12:22:24.465  INFO 18216 --- [main] c.heydari.customer.CustomerApplication   : Starting CustomerApplication using Java 1.8.0_151 on Amir with PID 18216 (D:\Tosan\FinalProject\Customer\target\classes started by Administrator in D:\Tosan\FinalProject\Customer)
+2022-04-08 12:22:24.475 DEBUG 18216 --- [main] c.heydari.customer.CustomerApplication   : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-04-08 12:22:24.477  INFO 18216 --- [main] c.heydari.customer.CustomerApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-04-08 12:22:46.639  INFO 17632 --- [main] c.heydari.customer.CustomerApplication   : Starting CustomerApplication using Java 1.8.0_151 on Amir with PID 17632 (D:\Tosan\FinalProject\Customer\target\classes started by Administrator in D:\Tosan\FinalProject\Customer)
+2022-04-08 12:22:46.650 DEBUG 17632 --- [main] c.heydari.customer.CustomerApplication   : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-04-08 12:22:46.652  INFO 17632 --- [main] c.heydari.customer.CustomerApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-04-08 12:22:56.552  INFO 17632 --- [main] c.heydari.customer.CustomerApplication   : Started CustomerApplication in 11.838 seconds (JVM running for 15.793)
+2022-04-08 12:23:08.239  INFO 17632 --- [http-nio-8090-exec-1] c.h.c.controller.CustomerController      : getCustomerDeposits INPUT PARAMET IS  1 
+2022-04-08 12:23:20.094  INFO 17632 --- [http-nio-8090-exec-1] c.h.customer.service.CustomerService     : getCustomerDeposits : Send Customer is : 
+2022-04-08 12:23:20.097  INFO 17632 --- [http-nio-8090-exec-1] c.h.customer.service.CustomerService     : getCustomerDeposits:  Send Customer is : 
+2022-04-08 12:23:33.632  INFO 17632 --- [http-nio-8090-exec-1] c.h.customer.service.CustomerService     : getCustomerDeposits : Get list count  is : 
+2022-04-08 12:23:33.633  INFO 17632 --- [http-nio-8090-exec-1] c.h.customer.service.CustomerService     : getCustomerDeposits : Get list count  is : 
